@@ -39,7 +39,7 @@ function Signup() {
     setEmailError('');
     try {
       // Send a POST request to the backend
-      const response = await axios.post('http://localhost:5000/signup', {
+      const response = await axios.post('https://nexorand-intern-server.vercel.app/signup', {
         email,
         password,
       });
