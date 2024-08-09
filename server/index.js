@@ -8,11 +8,17 @@ const jwt = require('jsonwebtoken');
 
 dotenv.config();
 const app = express();
+app.use(cors({
+  origin:['https://nexorand-intern-client.vercel.app'],
+  methods:['POST','GET'],
+  credentials:true,
+  
+}));
 const PORT = process.env.PORT || 5000;
 const JWT_SECRET = 'kwdw92jne29wimd29';
 
 app.use(express.json());
-app.use(cors());
+
 
 app.get('/',(req,res)=>{
   res.send('Hellow');
